@@ -3,8 +3,9 @@ import { NavLink } from 'react-router-dom'
 const navItems = [
   { label: 'Home', path: '/' },
   { label: 'About', path: '/about' },
-  { label: 'Projects', path: '/projects' },
-  { label: 'Contact', path: '/contact' },
+  { label: 'Career Assistant', path: '/assistant' },
+  /*{ label: 'Projects', path: '/projects' },TODO: Unhide when more projects are added */
+  /*{ label: 'Contact', path: '/contact' },*/
 ]
 
 export function Header() {
@@ -15,7 +16,7 @@ export function Header() {
           to="/"
           className="text-lg font-bold tracking-tight text-white transition-colors hover:text-accent-hover"
         >
-          Portfolio<span className="text-accent">.</span>
+          Najah Smith<span className="text-accent"></span>
         </NavLink>
 
         <nav className="hidden items-center gap-1 md:flex">

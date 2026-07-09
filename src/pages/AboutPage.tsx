@@ -4,26 +4,42 @@ import { skillCategories, skills } from '../data/skills'
 
 const experience = [
   {
-    role: 'Senior Frontend Developer',
-    company: 'Tech Company',
-    period: '2022 — Present',
-    description:
-      'Led development of customer-facing web applications serving 100k+ users. Introduced component library and improved Core Web Vitals by 40%.',
+    role: 'Software Engineer in Test',
+    company: 'BlackLine',
+    period: '2019 — Present',
+    description:[
+      'Managed and led all offshore and onshore QA efforts for BlackLine\'s Intercompany Hub suite.',
+      'Designed and implemented a localization-ready automation testing framework using Selenium and C#.',
+      'Integrated automated tests into CI/CD pipelines using Jenkins and GitHub Actions ',
+      'Collaborated with AppSec teams to integrate application security into the test automation suite.',
+      'Collaborated with development, product, and customer success teams to create detailed test plans, test cases, and triage application bugs.',
+    ],
   },
   {
-    role: 'Full Stack Developer',
-    company: 'Startup Inc.',
-    period: '2020 — 2022',
+    role: 'Software Engineer in Test',
+    company: 'Accruent',
+    period: '2018 — 2019',
     description:
-      'Built MVP from scratch using React and Node.js. Implemented CI/CD pipeline and established engineering best practices.',
+      [
+        'Developed and maintained UI automation scripts using Selenium WebDriver and Python.',
+        'Assessed systems stability by executing performance testing with NeoLoad.',
+        'Authored detailed test plans and test cases for web applications and RESTful APIs.',
+        'Logged and tracked defects in Jira with clear reproduction steps and impact analysis.',
+      ],
   },
   {
-    role: 'Junior Developer',
-    company: 'Agency Co.',
-    period: '2018 — 2020',
+    role: 'Associate Software Engineer',
+    company: 'CA Technologies',
+    period: '2016 — 2018',
     description:
-      'Developed responsive websites and e-commerce solutions for diverse clients. Gained expertise in modern JavaScript frameworks.',
+      [
+        'Designed and executed test plans for UI dashboards, metric visualization, and alerting features.',
+        'Performed end - to - end testing across WebLogic, JBoss, Tomcat, and.NET servers.',
+        'Deployed and maintained Java, .NET, Node.js, and PHP agents in QA and Dev environments.',
+        'Collaborated with cross - functional teams to investigate missing metrics, connectivity issues, and dashboard defects.',
+      ],
   },
+
 ]
 
 export function AboutPage() {
@@ -35,28 +51,27 @@ export function AboutPage() {
 
   return (
     <Container className="py-24">
-      <SectionHeading
-        eyebrow="About"
-        title="A bit about me"
-        description="I'm a developer who loves turning ideas into polished, user-friendly products."
-      />
 
       <div className="grid gap-16 lg:grid-cols-2">
+        
+        <div className="lg:col-span-2">
+        <SectionHeading
+          eyebrow="About"
+          title={'Built in New Orleans, Engineered for Quality'}
+          maxWidth="max-w-full"
+        />
+        </div>
+
         <div className="space-y-6 text-zinc-400 leading-relaxed">
           <p>
-            With over 6 years of experience in web development, I specialize in
-            building modern applications with React, TypeScript, and Node.js. I
-            care deeply about code quality, performance, and creating interfaces
-            that feel intuitive.
+            With over 8 years of experience in software testing and development, I specialize in
+            building solutions that improve software quality. My focus is on automating testing processes
+            and utilizing AI to improve testing efficiency, release sign off, and the overall customer experience.
           </p>
           <p>
-            When I&apos;m not coding, you&apos;ll find me exploring new
-            technologies, contributing to open source, or sharing knowledge
-            through blog posts and mentoring.
-          </p>
-          <p>
-            I&apos;m always open to interesting projects and collaborations.
-            Feel free to reach out if you&apos;d like to work together.
+            When I&apos;m not developing or learning new technologies, you&apos;ll find me
+            hiking, shopping, traveling, volunteering, or spending time with my family.
+            As a New Orleans native I enjoy cooking homemade meals and finding festivals to attend.
           </p>
         </div>
 
@@ -98,7 +113,14 @@ export function AboutPage() {
                 {job.role}
               </h4>
               <p className="text-sm text-zinc-500">{job.company}</p>
-              <p className="mt-3 text-zinc-400">{job.description}</p>
+              <div className="mt-3 max-h-28 overflow-y-auto pr-2 scrollbar-hide">
+                <ul className="space-y-2 text-zinc-400">
+                  {job.description.map((item) => (
+                    <li key={item}>• {item}</li>
+                  ))}
+                </ul>
+              </div>
+              <div className="pointer-events-none absolute bottom-0 left-0 h-6 w-full bg-gradient-to-t from-surface to-transparent" />
             </div>
           ))}
         </div>

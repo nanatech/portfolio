@@ -4,9 +4,17 @@ import { Container } from '../components/ui/Container'
 import { ProjectCard } from '../components/projects/ProjectCard'
 import { SectionHeading } from '../components/ui/SectionHeading'
 import { projects } from '../data/projects'
+import { resume } from '../data/resume'
 import { skills } from '../data/skills'
 
 const featuredProjects = projects.filter((p) => p.featured)
+const experienceHighlights = [
+  '8+ years of experience',
+  '100% sanity/smoke tests passing rate',
+  '90% regression tests coverage',
+  '50% reduction in client incidents',
+  'AI powered tools: Test Case Generation, Client Incident Investigation, Automation Failure Analysis',
+]
 
 export function HomePage() {
   return (
@@ -18,29 +26,56 @@ export function HomePage() {
         </div>
 
         <Container className="relative">
-          <div className="max-w-3xl animate-fade-in">
-            <p className="mb-4 text-sm font-medium uppercase tracking-widest text-accent">
-              Hello, I&apos;m a Developer
-            </p>
-            <h1 className="text-5xl font-bold leading-tight tracking-tight sm:text-6xl lg:text-7xl">
-              Building digital
-              <br />
-              <span className="text-gradient">experiences</span> that matter.
-            </h1>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-zinc-400">
-              I craft performant, accessible web applications with modern
-              technologies. Passionate about clean code, thoughtful design, and
-              solving real problems.
-            </p>
-            <div className="mt-10 flex flex-wrap gap-4">
-              <Link to="/projects">
-                <Button size="lg">View My Work</Button>
-              </Link>
-              <Link to="/contact">
-                <Button variant="secondary" size="lg">
-                  Get in Touch
+          <div className="grid animate-fade-in items-start gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(280px,380px)]">
+            <div>
+              <p className="mb-4 text-sm font-medium uppercase tracking-widest text-accent">
+                Senior Software Engineer in Test
+              </p>
+              <h1 className="text-3xl font-bold leading-tight tracking-tight sm:text-4xl lg:text-5xl">
+                Building{' '}
+                <span className="text-gradient">AI powered solutions </span>
+                that accelerate release sign offs and enhance software quality.
+              </h1>
+              <p className="mt-6 max-w-xl text-lg leading-relaxed text-zinc-400">
+                I don't just test, I build. I'm a software engineer with a passion for building automated solutions that improve the quality of software and enhance the customer experience.
+              </p>
+              <div className="mt-10 flex flex-wrap gap-4">
+                 <Link to="/assistant">
+                  <Button size="lg">
+                    Chat with my AI Career Assistant
+                  </Button>
+                </Link>
+                
+                <Link to="/projects" className="hidden">
+                  {/* TODO: Unhide when more projects are added */}
+                  <Button variant="secondary" size="lg">View My Work</Button>
+                </Link>
+                <Button
+                  href={resume.path}
+                  download={resume.fileName}
+                  variant="secondary"
+                  size="lg"
+                >
+                  Download Resume
                 </Button>
-              </Link>
+                <Link to="/contact" className="hidden">
+                  {/* TODO: Unhide when contact page is updated*/}
+                  <Button variant="secondary" size="lg">
+                    Get in Touch
+                  </Button>
+                </Link>
+              </div>
+            </div>
+
+            <div className="lg:pt-9">
+              <ul className="space-y-4">
+                {experienceHighlights.map((highlight) => (
+                  <li key={highlight} className="flex gap-3 text-zinc-300">
+                    <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-accent" />
+                    <span>{highlight}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </Container>
@@ -51,10 +86,10 @@ export function HomePage() {
           <SectionHeading
             eyebrow="Skills"
             title="Technologies I work with"
-            description="A toolkit built from years of building products across the stack."
+            description="A toolkit built from years of testing and building products across the stack."
           />
           <div className="flex flex-wrap gap-3">
-            {skills.slice(0, 12).map((skill) => (
+            {skills.slice(0, 16).map((skill) => (
               <span
                 key={skill.name}
                 className="rounded-lg border border-surface-border bg-surface-raised px-4 py-2 text-sm text-zinc-300 transition-colors hover:border-accent/30 hover:text-white"
@@ -70,15 +105,16 @@ export function HomePage() {
         <Container>
           <SectionHeading
             eyebrow="Featured Work"
-            title="Selected projects"
-            description="A few things I've built recently."
+            title="AI Powered Projects"
+            description="Personal projects built using LLMs and AI Agents."
           />
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {featuredProjects.map((project) => (
               <ProjectCard key={project.id} project={project} />
             ))}
           </div>
-          <div className="mt-12 text-center">
+          {/* TODO: Unhide when more projects are added */}
+          <div className="mt-12 text-center hidden">
             <Link to="/projects">
               <Button variant="secondary">View All Projects</Button>
             </Link>

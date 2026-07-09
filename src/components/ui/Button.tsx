@@ -8,6 +8,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   size?: ButtonSize
   children: ReactNode
   href?: string
+  download?: string | boolean
 }
 
 const variantStyles: Record<ButtonVariant, string> = {
@@ -29,6 +30,7 @@ export function Button({
   size = 'md',
   children,
   href,
+  download,
   className = '',
   ...props
 }: ButtonProps) {
@@ -36,7 +38,12 @@ export function Button({
 
   if (href) {
     return (
-      <a href={href} className={classes} target="_blank" rel="noopener noreferrer">
+      <a
+        href={href}
+        className={classes}
+        download={download}
+        {...(download ? {} : { target: '_blank', rel: 'noopener noreferrer' })}
+      >
         {children}
       </a>
     )
