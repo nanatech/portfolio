@@ -64,7 +64,7 @@ export function AboutPage() {
 
         <div className="space-y-6 text-zinc-400 leading-relaxed">
           <p>
-            With over 8 years of experience in software testing and development, I specialize in
+            With over 5+ years of experience in software testing and development, I specialize in
             building solutions that improve software quality. My focus is on automating testing processes
             and utilizing AI to improve testing efficiency, release sign off, and the overall customer experience.
           </p>

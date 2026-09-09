@@ -5,7 +5,7 @@ import { AboutPage } from '../pages/AboutPage'
 import { HomePage } from '../pages/HomePage'
 import { AICareerChatPage } from '../pages/AICareerChatPage'
 import { NotFoundPage } from '../pages/NotFoundPage'
-/*import { ProjectsPage } from '../pages/ProjectsPage'*/
+import { ProjectsPage } from '../pages/ProjectsPage'
 
 export const router = createBrowserRouter([
   {
@@ -14,8 +14,8 @@ export const router = createBrowserRouter([
     children: [
       { index: true, element: <HomePage /> },
       { path: 'about', element: <AboutPage /> },
-      /*{ path: 'projects', element: <ProjectsPage /> },
-      { path: 'contact', element: <ContactPage /> },*/
+      { path: 'projects', element: <ProjectsPage /> },
+      /*{ path: 'contact', element: <ContactPage /> },*/
       { path: 'assistant', element: <AICareerChatPage /> },
       { path: '*', element: <NotFoundPage /> },
     ],

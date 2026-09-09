@@ -113,8 +113,7 @@ export function HomePage() {
               <ProjectCard key={project.id} project={project} />
             ))}
           </div>
-          {/* TODO: Unhide when more projects are added */}
-          <div className="mt-12 text-center hidden">
+          <div className="mt-12 text-center">
             <Link to="/projects">
               <Button variant="secondary">View All Projects</Button>
             </Link>

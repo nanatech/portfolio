@@ -11,14 +11,14 @@ export const projects: Project[] = [
     repoUrl: 'https://github.com/nanatech/my-agents/tree/master/resume-agent',
     featured: true,
   },
-  /*{
+  {
     id: '2',
-    title: 'TestGenerator',
+    title: 'Multi-Agent Deep Research',
     description:
-      'A tool to generate test cases for software testing.',
-    tags: ['Python', 'Playwright', 'OpenAI SDK'],
-    liveUrl: '#',
-    repoUrl: '#',
+      'A multi-agent program that uses Tavily Search API to perform deep research on a given topic. Agents include models from OpenAI, Nvidia, and Anthropic.',
+    tags: ['Python', 'OpenAI SDK', 'OpenRouter', 'Tavily', 'Nvidia', 'Anthropic'],
+    liveUrl: '',
+    repoUrl: 'https://github.com/nanatech/my-agents/blob/master/deep_research/deep_research.py',
     featured: true,
-  },*/
+  },
 ]
