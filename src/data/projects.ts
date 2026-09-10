@@ -21,4 +21,13 @@ export const projects: Project[] = [
     repoUrl: 'https://github.com/nanatech/my-agents/blob/master/deep_research/deep_research.py',
     featured: true,
   },
+  {
+    id: '3',
+    title: 'Job Resume Tailor Agent',
+    description:
+      'An agent that tailors a job resume to a given job posting. Built using OpenAI SDK and Gradio, hosted on Render',
+    tags: ['OpenAI SDK', 'Python', 'Gradio', 'Render'],
+    liveUrl: 'https://job-resume-tailor.onrender.com/',
+    featured: false,
+  },
 ]
