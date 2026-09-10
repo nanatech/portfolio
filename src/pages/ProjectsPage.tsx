@@ -9,7 +9,7 @@ export function ProjectsPage() {
       <SectionHeading
         eyebrow="Portfolio"
         title="All projects"
-        description="A collection of work spanning web apps, APIs, and design systems."
+        description="A collection of projects I've built as I continue to explore the world of AI and software development."
       />
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {projects.map((project) => (
